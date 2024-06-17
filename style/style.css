@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  :root {
+    --text: 17 17 17;
+    --primary: 0 136 255;
+    --secondary: 0 204 255;
+    --yellow: 255 193 7;
+    --pink: 254 0 152;
+    --darkPrim: 8 34 57;
+    --bluePink: 241 87 239;
+    --red: 236 2 0;
+    --darkPrim-hard: 2 19 33;
+    --darkBlue: 17 65 137;
+  }
+}
+
+/* :root {
+  --text: #111111;
+  --primary: #0088ff;
+  --secondary: #00ccff;
+  --yellow: #ffc107;
+  --pink: #fe0098;
+    --red: #ec0200;
+  --darkPrim-hard: #021321;
+  --darkPrim: #082239;
+} */
+
+.link-menu::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: #114189;
+  display: block;
+  transition: 0.5s all;
+  border-radius: 20px;
+}
+.link-menu:hover::after {
+  width: 100%;
+}
+
+.dotCard {
+  background-image: radial-gradient(#0088ff 1.3px, transparent 1.3px);
+  background-size: 20px 20px;
+  background-color: #ffffff;
+}
+.triangle-dot-obectif {
+  background-image: radial-gradient(#0088ff 1.5px, transparent 1.5px);
+  background-size: 13px 13px;
+  background-color: #ffffff;
+}
+
+.photo-slide.next + .photo-slide {
+  transform: translateX(200%);
+}
+
+.photo-slide.prev {
+  z-index: 20;
+  transform: translateX(-100%);
+}
+.photo-slide.current {
+  z-index: 20;
+  transform: translateX(0);
+}
+.photo-slide.next {
+  z-index: 20;
+  transform: translateX(100%);
+}
+
+/*  */
+.bgImage-wrap {
+  background: #f0f8ff;
+  animation: schema 1s alternate-reverse infinite;
+}
+
+@keyframes schema {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px; /* Largeur de la barre de défilement */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #114189; /* Couleur de la poignée */
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f0f8ff; /* Couleur de la piste */
+}
